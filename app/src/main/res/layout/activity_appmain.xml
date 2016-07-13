@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/zero_margin"
+    android:paddingLeft="@dimen/zero_margin"
+    android:paddingRight="@dimen/zero_margin"
+    android:paddingTop="@dimen/zero_margin"
+    tools:context="com.jjkj.guoyouchao.fykj_food.APPMainActivity">
+
+
+
+
+    <RadioGroup
+        android:layout_width="match_parent"
+        android:layout_alignParentBottom="true"
+        android:id="@+id/bars"
+        android:background="@color/white_color"
+        android:orientation="horizontal"
+        android:layout_height="56dp">
+        
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:text="店面"
+            style="@style/tab_menu_item"
+            android:id="@+id/shops"
+            android:textColor="@color/appbar"
+            android:drawableTop="@drawable/tab_menu_better"
+            />
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:text="菜单"
+            android:id="@+id/tab_food"
+            style="@style/tab_menu_item"
+            android:textColor="@color/appbar"
+            android:drawableTop="@drawable/tab_menu_channel"
+
+             />
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:text="上菜"
+            android:id="@+id/go_food"
+            android:textColor="@color/appbar"
+            style="@style/tab_menu_item"
+            android:drawableTop="@drawable/tab_menu_better"
+
+            />
+
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:text="收支"
+            android:id="@+id/in_out"
+            android:textColor="@color/appbar"
+            style="@style/tab_menu_item"
+            android:drawableTop="@drawable/tab_menu_message"
+
+           />
+
+    </RadioGroup>
+
+    <View
+        android:id="@+id/div_tab_bar"
+        android:layout_width="match_parent"
+        android:layout_height="2px"
+        android:layout_above="@id/bars"
+        android:background="@color/white_color" />
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/Views"
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/div_tab_bar"
+        android:layout_marginTop="@dimen/zero_margin"
+        />
+
+</RelativeLayout>

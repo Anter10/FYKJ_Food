@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <FrameLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        
+        <ImageView
+            android:layout_width="@dimen/food_image_width"
+            android:layout_height="@dimen/food_image_height"
+            android:paddingLeft="@dimen/food_left_padding"
+            android:paddingTop="@dimen/food_top_padding"
+            android:src="@drawable/jidan"
+            />
+
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:id="@+id/food_words"
+
+            android:paddingLeft="@dimen/food_image_width"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:id="@+id/food_name"
+                android:layout_marginLeft="@dimen/food_left_padding"
+                android:text="番茄炒蛋"
+                android:textSize="@dimen/food_name_size"
+                android:paddingTop="@dimen/food_top_padding"
+                android:layout_height="wrap_content" />
+
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_marginLeft="@dimen/food_left_padding"
+                android:text="已售1200份"
+
+                android:textSize="@dimen/food_name_size"
+                android:paddingTop="@dimen/food_sealnum_top_padding"
+                android:layout_height="wrap_content" />
+
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_marginLeft="@dimen/food_left_padding"
+                android:text="100元"
+
+                android:textSize="@dimen/food_name_size"
+                android:layout_marginTop="@dimen/food_sealprice_top_padding"
+                android:layout_height="wrap_content" />
+
+
+       </FrameLayout>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:textSize="@dimen/food_name_size"
+            android:text="点菜"
+            android:layout_gravity="right"
+            android:paddingRight="15dp"
+            android:id="@+id/tap_food"
+            android:layout_marginTop="@dimen/tap_food_top_padding"
+            android:layout_height="wrap_content" />
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_marginTop="@dimen/tap_food_top_padding"
+            android:layout_height="5dp"></FrameLayout>
+
+    </FrameLayout>
+
+
+</LinearLayout>

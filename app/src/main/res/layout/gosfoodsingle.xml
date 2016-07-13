@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_marginLeft="10dp"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_width="wrap_content"
+                android:text="1号桌"
+
+                android:textSize="@dimen/gos_food_single_nameid"
+                android:textColor="@color/appbar"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:text="1号桌"
+                android:layout_gravity="right"
+                android:textSize="@dimen/gos_food_single_nameid"
+                android:paddingRight="20dp"
+                android:textColor="@color/appbar"
+                android:layout_height="wrap_content" />
+
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:paddingTop="40dp"
+            android:layout_marginLeft="10dp"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:text="上菜时间:9点半"
+                android:layout_gravity="left"
+                android:textSize="@dimen/gos_food_single_nameid"
+                android:paddingRight="20dp"
+                android:textColor="@color/appbar"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:text="上菜"
+                android:layout_gravity="right"
+                android:textSize="@dimen/inout_titlesize"
+                android:paddingRight="20dp"
+                android:textColor="@color/appbar"
+                android:layout_height="wrap_content" />
+
+
+        </FrameLayout>
+
+
+
+    </FrameLayout>
+</LinearLayout>

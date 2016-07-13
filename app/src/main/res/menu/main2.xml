@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/addtables"
+        android:orderInCategory="100"
+        android:title="@string/add_table_word"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/addfood"
+        android:orderInCategory="100"
+        android:title="@string/add_food_word"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/addfriends"
+        android:orderInCategory="100"
+        android:title="@string/add_friend_word"
+        app:showAsAction="never" />
+</menu>

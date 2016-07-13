@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.jjkj.guoyouchao.fykj_food.RegisterActivity">
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:paddingTop="@dimen/top_padding"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:id="@+id/ok_input_id"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/input_hight_editbox"
+            android:textColor="@color/appbar"
+            android:textSize="@dimen/input_size"
+            android:inputType="phone"
+            android:hint="@string/please_input_id"
+            />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_gravity="right"
+
+            android:text="@string/send_codeing"
+            android:textColor="@color/appbar"
+            android:textSize="@dimen/input_size"
+            android:layout_height="wrap_content" />
+
+        <EditText
+            android:id="@+id/input_codings"
+            android:layout_width="140dp"
+            android:layout_height="@dimen/input_hight_editbox"
+            android:layout_gravity="left"
+            android:textColor="@color/appbar"
+            android:layout_marginTop="@dimen/input_coding_margin"
+            android:textSize="@dimen/input_size"
+            android:inputType="number"
+            android:hint="@string/please_input_codings"
+            />
+
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:text="同意放游菜单的相关使用协议"
+            android:textColor="@color/appbar"
+            android:layout_gravity="left"
+            android:layout_marginTop="@dimen/check_xy_margin"
+            android:layout_height="wrap_content" />
+
+        <Button
+            android:id="@+id/findpwd_ok_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/ok_word"
+            android:textSize="@dimen/ok_word_size"
+            android:background="@drawable/buttonshape"
+            android:textColor="@color/white_color"
+
+            android:layout_marginTop="@dimen/register_btn_margin"
+            android:layout_gravity="bottom|center_horizontal"
+            />
+
+    </FrameLayout>
+</RelativeLayout>

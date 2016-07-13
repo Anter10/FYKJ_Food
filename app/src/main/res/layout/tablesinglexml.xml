@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginTop="10dp"
+    android:paddingRight="@dimen/zero_margin"
+    android:minHeight="?android:attr/listPreferredItemHeight"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:paddingLeft="8dp"
+        android:minHeight="?android:attr/listPreferredItemHeight"
+        android:layout_height="match_parent">
+
+
+        <TableLayout
+            android:layout_width="match_parent"
+
+            android:layout_height="match_parent">
+
+
+            <TableRow
+                android:orientation="horizontal"
+                >
+                <TextView
+                    android:id="@+id/tableName"
+                    android:text="桌号:1号桌"
+                    android:textSize="@dimen/ok_word_size"
+                    android:layout_gravity="left"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    />
+
+                <TextView
+                    android:id="@+id/tableSize"
+                    android:text="型号:1人桌"
+                    android:paddingRight="0dp"
+                    android:textSize="@dimen/ok_word_size"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    />
+            </TableRow>
+            <FrameLayout
+                android:layout_height="10dp"
+                android:layout_width="match_parent"
+                />
+            <TableRow>
+                <TextView
+                    android:id="@+id/tableStatue"
+                    android:text="状态:闲置中"
+                    android:textSize="@dimen/ok_word_size"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    />
+
+
+            </TableRow>
+            <FrameLayout
+                android:layout_height="20dp"
+                android:layout_width="match_parent"
+                />
+
+            <TableRow>
+                <TextView
+                    android:id="@+id/eatpeople"
+                    android:text = "顾客:15010215839"
+                    android:textSize="@dimen/ok_word_size"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    />
+            </TableRow>
+            <FrameLayout
+                android:layout_height="10dp"
+                android:layout_width="match_parent"
+                />
+            <TextView
+                android:id="@+id/money"
+                android:text = "此次消费金额:189元"
+                android:textSize="@dimen/ok_word_size"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                />
+
+            <FrameLayout
+                android:layout_height="20dp"
+                android:layout_width="match_parent"
+                />
+
+            <TableRow>
+                <TextView
+                    android:id="@+id/eatnum"
+                    android:text = "消费次数:5次"
+                    android:textSize="@dimen/ok_word_size"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    />
+            </TableRow>
+            <FrameLayout
+                android:layout_height="10dp"
+                android:layout_width="match_parent"
+                />
+
+
+
+            <TextView
+                android:id="@+id/totalmoney"
+                android:text = "消费总金额:445元"
+                android:textSize="@dimen/ok_word_size"
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                />
+            <FrameLayout
+                android:layout_height="20dp"
+                android:layout_width="match_parent"
+               />
+
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                >
+                <TextView
+                    android:id="@+id/tap_food"
+                    android:text="点菜"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/appbar"
+                    android:layout_gravity="left"
+                    android:textSize="@dimen/ok_word_size"
+
+                    />
+
+                <TextView
+                    android:id="@+id/add_food"
+                    android:text="加菜"
+                    android:layout_gravity="center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/appbar"
+                    android:textSize="@dimen/ok_word_size"
+
+                    />
+
+
+                <TextView
+                    android:id="@+id/end_money"
+                    android:textColor="@color/appbar"
+                    android:text="结账"
+                    android:layout_gravity="right"
+                    android:paddingRight="16dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/ok_word_size"
+                    />
+            </FrameLayout>
+
+
+
+            <FrameLayout
+                android:layout_height="30dp"
+                android:layout_width="match_parent"
+                >
+
+
+            </FrameLayout>
+        </TableLayout>
+
+
+
+    </RelativeLayout>
+
+</LinearLayout>
