@@ -43,7 +43,7 @@
             android:id="@+id/first_ok_btn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/ok_word"
+            android:text="@string/login_word"
             android:textSize="@dimen/ok_word_size"
             android:background="@drawable/buttonshape"
             android:textColor="@color/white_color"

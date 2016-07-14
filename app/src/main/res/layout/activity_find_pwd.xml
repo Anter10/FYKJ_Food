@@ -18,10 +18,11 @@
 
         <EditText
             android:id="@+id/ok_input_id"
-            android:layout_width="match_parent"
+            android:layout_width="160dp"
             android:layout_height="@dimen/input_hight_editbox"
             android:textColor="@color/appbar"
             android:textSize="@dimen/input_size"
+            android:maxLength="11"
             android:inputType="phone"
             android:hint="@string/please_input_id"
             />
@@ -29,7 +30,7 @@
         <Button
             android:layout_width="wrap_content"
             android:layout_gravity="right"
-
+            android:id="@+id/send_find_phone"
             android:text="@string/send_codeing"
             android:textColor="@color/appbar"
             android:textSize="@dimen/input_size"
@@ -37,8 +38,9 @@
 
         <EditText
             android:id="@+id/input_codings"
-            android:layout_width="140dp"
+            android:layout_width="160dp"
             android:layout_height="@dimen/input_hight_editbox"
+            android:maxLength="6"
             android:layout_gravity="left"
             android:textColor="@color/appbar"
             android:layout_marginTop="@dimen/input_coding_margin"

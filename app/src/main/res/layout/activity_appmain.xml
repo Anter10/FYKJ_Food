@@ -52,7 +52,7 @@
 
         <RadioButton
             android:layout_width="wrap_content"
-            android:text="收支"
+            android:text="个人"
             android:id="@+id/in_out"
             android:textColor="@color/appbar"
             style="@style/tab_menu_item"
