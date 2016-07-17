@@ -1,6 +1,8 @@
 package com.jjkj.guoyouchao.fykj_food;
 
 import android.content.Context;
+import android.content.Intent;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -21,11 +23,11 @@ public class InOutCell extends BaseAdapter {
 
 
 
-    private List<Map<String, InOutModel>> tablesData;
+    private InOutModel[] tablesData;
     private LayoutInflater layoutInflater;
     private Context context;
 
-    public InOutCell(Context context, List<Map<String, InOutModel>> data){
+    public InOutCell(Context context, InOutModel[] data){
         this.context = context;
         this.tablesData = data;
         this.layoutInflater = LayoutInflater.from(context);
@@ -40,12 +42,12 @@ public class InOutCell extends BaseAdapter {
 
     @Override
     public int getCount() {
-        return this.tablesData.size();
+        return this.tablesData.length + 3;
     }
 
     @Override
     public Object getItem(int position) {
-        return this.tablesData.get(position);
+        return this.tablesData[position];
     }
 
     @Override
@@ -54,21 +56,80 @@ public class InOutCell extends BaseAdapter {
     }
 
     @Override
-    public View getView(int position, View convertView, ViewGroup parent) {
+    public View getView(final int position, View convertView, ViewGroup parent) {
         InoutModelView tmv = null;
-        if(convertView==null){
-            tmv = new InoutModelView();
-            //获得组件，实例化组件
-            convertView=layoutInflater.inflate(R.layout.inoutsinglexml, null);
-
-            convertView.setTag(tmv);
+        if(position == 0 && convertView==null){
+            convertView=layoutInflater.inflate(R.layout.pmsingle, null);
+        }else if(position == 3){
+            convertView=layoutInflater.inflate(R.layout.graycolor, null);
+        }else if(position == 6){
+            convertView=layoutInflater.inflate(R.layout.graycolor, null);
         }else{
-            tmv=(InoutModelView)convertView.getTag();
+            if(convertView==null){
+                tmv = new InoutModelView();
+                //获得组件，实例化组件
+
+                convertView=layoutInflater.inflate(R.layout.inoutsinglexml, null);
+                tmv.title = (TextView)convertView.findViewById(R.id.title);
+                tmv.subtitle = (TextView)convertView.findViewById(R.id.subtitle);
+                convertView.setTag(tmv);
+            }else{
+                tmv=(InoutModelView)convertView.getTag();
+            }
+            int tp = position-1;
+            if (position > 0 && position < 3){
+                tp = position-1;
+            }else if(position > 3 && position < 6){
+                tp = position-2;
+            }else if(position > 6){
+                tp = position-3;
+            }
+
+            if(position != 7){
+                convertView.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        clickPos(position);
+                    }
+                });
+            }
+
+            Log.d("pos = ",String.valueOf(tp));
+            tmv.title.setText(tablesData[tp].getTitle());
+            tmv.subtitle.setText(tablesData[tp].getSubTitle());
         }
-        //绑定数据
+
+        //绑定事件
+
+
 
         return convertView;
     }
 
+    public void clickPos(int position){
+        Intent intens = null;
+        if(position == 1){
+            intens = new Intent();
+            intens.setClass(this.context,ShopInActivity.class);
+        }else if(position == 2){
+            intens = new Intent();
+            intens.setClass(this.context,ShopOutActivity.class);
+        }else if(position == 3){
+
+        }else if(position == 4){
+            intens = new Intent();
+            intens.setClass(this.context,MembersActivity.class);
+        }else if(position == 5){
+            intens = new Intent();
+            intens.setClass(this.context,ProEditActivity.class);
+        }else if(position == 6){
+
+        }else if(position == 7){
+
+        }
+        if(intens != null){
+            this.context.startActivity(intens);
+        }
+    }
 
 }

@@ -26,7 +26,7 @@
     <dimen name="food_sealnum_top_padding">55dp</dimen>
     <dimen name="food_sealprice_top_padding">95dp</dimen>
     <dimen name="tap_food_top_padding">85dp</dimen>
-
+    <dimen name="person_edit_size">18dp</dimen>
 
     <dimen name="in_out_size">18dp</dimen>
 
@@ -36,9 +36,10 @@
     <dimen name="food_name_size">20dp</dimen>
     <dimen name="fab_margin">16dp</dimen>
 
+    <dimen name="food_info_width">140dp</dimen>
 
-    <dimen name="add_food_pic_width">120dp</dimen>
-    <dimen name="add_food_pic_height">120dp</dimen>
+    <dimen name="add_food_pic_width">140dp</dimen>
+    <dimen name="add_food_pic_height">140dp</dimen>
 
 
     <dimen name="edit_food_pic_font">18dp</dimen>

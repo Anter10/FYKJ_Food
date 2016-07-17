@@ -21,7 +21,7 @@
             android:layout_height="@dimen/input_hight_editbox"
             android:textColor="@color/appbar"
             android:textSize="@dimen/input_size"
-            android:text="15010215839"
+
             android:inputType="phone"
             android:hint="@string/please_input_id"
             />
@@ -31,7 +31,7 @@
             android:id="@+id/ok_input_pwd"
             android:layout_width="match_parent"
             android:layout_marginTop="@dimen/input_row_high"
-            android:text="abc123"
+
             android:textColor="@color/appbar"
             android:inputType="textPassword"
             android:textSize="@dimen/input_size"

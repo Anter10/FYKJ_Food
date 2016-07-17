@@ -65,6 +65,7 @@ public class TableCell extends BaseAdapter {
         TableModelView tmv = null;
         if(convertView==null){
             tmv = new TableModelView();
+
             //获得组件，实例化组件
             convertView=layoutInflater.inflate(R.layout.tablesinglexml, null);
 

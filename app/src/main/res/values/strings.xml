@@ -15,9 +15,13 @@
     <string name="title_activity_common">CommonActivity</string>
     <string name="title_activity_appmain">APPMainActivity</string>
 
-    <string name="add_friend_word">添加好友</string>
+    <string name="add_friend_word">添加店员</string>
     <string name="add_food_word">添加食物</string>
     <string name="add_table_word">添加桌号</string>
+
+    <string name="edit_password">设置密码</string>
+    <string name="ok_password1">请输入密码</string>
+    <string name="ok_password2">请确认密码</string>
 
     <string name="edit_food_pic">设置食物图片</string>
 
@@ -30,4 +34,9 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="title_activity_add_food">AddFoodActivity</string>
     <string name="title_activity_add_table">AddTableActivity</string>
+    
+    <string name="shop_in_name">店内收入</string>
+    <string name="shop_out_name">店内支出</string>
+    <string name="shop_members_name">相关店员</string>
+    <string name="shop_proedit_name">权限设置</string>
 </resources>

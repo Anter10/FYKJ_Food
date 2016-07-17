@@ -3,7 +3,9 @@ package com.jjkj.guoyouchao.fykj_food;
 import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
+import android.provider.Settings;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,6 +13,7 @@ import android.widget.ListView;
 
 import com.jjkj.guoyouchao.fykj_food.UserDataModel.InOutModel;
 import com.jjkj.guoyouchao.fykj_food.UserDataModel.TableSingModel;
+import com.jjkj.guoyouchao.fykj_food.UserDataModel.UserData;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -47,19 +50,13 @@ public class InOutFragmentn extends Fragment {
         return rootView;
     }
 
-    public List<Map<String, InOutModel>> getData(){
-        List<Map<String, InOutModel>> list=new ArrayList<Map<String,InOutModel>>();
-        for (int i = 0; i < 10; i++) {
-            Map<String, InOutModel> map=new HashMap<String, InOutModel>();
-            list.add(map);
-        }
-        return list;
-    }
+
     public void initViews(){
 //        if(Sections == 1){
-        List<Map<String, InOutModel>> list = getData();
+        InOutModel [] ios = UserData.getUserdata().getIomodels();
+        Log.d("dsadasd len = ",String.valueOf(ios.length));
 //        listView.addFooterView(new View(this.getContext()));
-        listView.setAdapter(new InOutCell(rootView.getContext(), list));
+        listView.setAdapter(new InOutCell(rootView.getContext(), ios));
 //        }
     }
 

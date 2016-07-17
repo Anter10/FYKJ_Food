@@ -33,13 +33,17 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
         forgetPwd   =  (TextView)findViewById(R.id.forgetPwd)   ;
         registerId  =  (TextView)findViewById(R.id.registerNew) ;
         firstOkBtn  =  (Button)findViewById(R.id.first_ok_btn)  ;
 
         pwdText     =  (EditText)findViewById(R.id.ok_input_pwd);
         idText      =  (EditText)findViewById(R.id.ok_input_id);
+
+//        String regisId =  getIntent().getExtras().getString("uid");
+//        if( regisId != null){
+//            idText.setText(regisId);
+//        }
 
         forgetPwd.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -89,6 +93,7 @@ public class MainActivity extends AppCompatActivity {
         }catch (JSONException ex){
 
         }
+
         params1.put("pj",obj.toString());
         Param.sendPost(this,url, params1, new JsonDataHandle() {
             @Override

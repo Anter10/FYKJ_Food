@@ -39,7 +39,12 @@
             android:label="@string/title_activity_appmain" />
         <activity android:name=".AddFriendsActivity" />
         <activity android:name=".AddFoodActivity" />
-        <activity android:name=".AddTableActivity"></activity>
+        <activity android:name=".AddTableActivity" />
+        <activity android:name=".EditPassworld" />
+        <activity android:name=".ShopInActivity" />
+        <activity android:name=".ShopOutActivity" />
+        <activity android:name=".MembersActivity" />
+        <activity android:name=".ProEditActivity"></activity>
     </application>
 
 </manifest>

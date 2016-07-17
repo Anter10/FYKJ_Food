@@ -20,15 +20,34 @@ public class UserData {
     List<Map<String, FoodDataModel>> FDM =new ArrayList<Map<String,FoodDataModel>>();
     List<Map<String, TableSingModel>> TSM =new ArrayList<Map<String,TableSingModel>>();
 
+    private InOutModel[]  iomodels = {null,null,null,null,null};
 
     public static UserData getUserdata(){
         if(userdata == null){
-           userdata = new UserData(new JSONObject());
+           userdata = new UserData();
+            userdata.initio();
         }
         return userdata;
     }
 
+    public void initio(){
+        String[] titles = {"店里收入","店里支出","相关店员","权限设置","退出帐号"};
+        String[] subtitles = {" "," "," "," "," "};
+        for (int  i = 0; i < titles.length; i ++){
+            InOutModel iom = new InOutModel();
+            iom.setTitle(titles[i]);
+            iom.setSubTitle(subtitles[i]);
+            iomodels[i] = iom;
+        }
+    }
 
+    public InOutModel[] getIomodels(){
+        return  iomodels;
+    }
+
+    public UserData(){
+
+    }
     public UserData(JSONObject data){
 
     }

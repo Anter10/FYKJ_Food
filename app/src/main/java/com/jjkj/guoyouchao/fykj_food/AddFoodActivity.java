@@ -1,6 +1,7 @@
 package com.jjkj.guoyouchao.fykj_food;
 
 
+import java.io.ByteArrayOutputStream;
 import java.io.File;
 
 import android.app.Activity;
@@ -11,19 +12,26 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
 import android.provider.MediaStore;
+import android.provider.Settings;
 import android.support.v7.app.AlertDialog;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Toast;
+
+import com.jjkj.guoyouchao.fykj_food.TOOLS.HtppUrlPath;
+import com.jjkj.guoyouchao.fykj_food.TOOLS.Param;
+
+import cz.msebera.android.httpclient.client.methods.HttpPost;
 
 public class AddFoodActivity extends CommonActivity {
 
     private static final int PHOTO_REQUEST_CAREMA = 1;// ≈ƒ’’
     private static final int PHOTO_REQUEST_GALLERY = 2;// ¥”œ‡≤·÷–—°‘Ò
     private static final int PHOTO_REQUEST_CUT = 3;// Ω·π˚
-
+    public Button  firstBtn;
     private ImageView iv_image;
-
+    Bitmap bitmap;
     /* Õ∑œÒ√˚≥∆ */
     private static final String PHOTO_FILE_NAME = "temp_photo.jpg";
     private File tempFile;
@@ -33,7 +41,13 @@ public class AddFoodActivity extends CommonActivity {
         setContentView(R.layout.activity_add_food);
         getSupportActionBar().setTitle(R.string.add_food_word);
 
-
+        firstBtn = (Button)findViewById(R.id.first_ok_btn);
+        firstBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                uploadIcon();
+            }
+        });
         iv_image = (ImageView)findViewById(R.id.food_image);
         iv_image.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -119,6 +133,7 @@ public class AddFoodActivity extends CommonActivity {
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
         if (requestCode == PHOTO_REQUEST_GALLERY) {
             // ¥”œ‡≤·∑µªÿµƒ ˝æ›
             if (data != null) {
@@ -139,6 +154,10 @@ public class AddFoodActivity extends CommonActivity {
             // ¥”ºÙ«–Õº∆¨∑µªÿµƒ ˝æ›
             if (data != null) {
                 Bitmap bitmap = data.getParcelableExtra("data");
+//                ByteArrayOutputStream ss = new ByteArrayOutputStream();
+//                bitmap.compress(Bitmap.CompressFormat.PNG,100, ss);
+//                bitmap.setWidth(160);
+//                bitmap.setHeight(160);
                 this.iv_image.setImageBitmap(bitmap);
             }
             try {
@@ -150,6 +169,12 @@ public class AddFoodActivity extends CommonActivity {
 
         }
 
-        super.onActivityResult(requestCode, resultCode, data);
+
     }
+
+    public void uploadIcon(){
+//        Param.uploadFile(this, bitmap, HtppUrlPath.dealimage);
+    }
+
+
 }
