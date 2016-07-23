@@ -39,4 +39,7 @@
     <string name="shop_out_name">店内支出</string>
     <string name="shop_members_name">相关店员</string>
     <string name="shop_proedit_name">权限设置</string>
+
+    <string name="UID">UID</string>
+    <string name="PWD">PWD</string>
 </resources>

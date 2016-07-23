@@ -5,9 +5,9 @@ package com.jjkj.guoyouchao.fykj_food.TOOLS;
  */
 public class HtppUrlPath {
     // 服务器地址
-//     public static String serverIp = "http://192.168.1.42:8080";
+   public static String serverIp = "http://192.168.1.42:8080";
 
-     public static String serverIp = "http://192.168.1.100:8080";
+//     public static String serverIp = "http://192.168.1.100:8080";
 
     public static String dealimage = serverIp + "/FYKJ/caidan/dealImage.jsp";
     //注册用户路径

@@ -1,6 +1,8 @@
 package com.jjkj.guoyouchao.fykj_food;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
@@ -39,6 +41,17 @@ public class MainActivity extends AppCompatActivity {
 
         pwdText     =  (EditText)findViewById(R.id.ok_input_pwd);
         idText      =  (EditText)findViewById(R.id.ok_input_id);
+
+        SharedPreferences sharedPref = getPreferences(Context.MODE_PRIVATE);
+        String uid = getResources().getString(R.string.UID);
+        String pwd = getResources().getString(R.string.PWD);
+        if(uid != null){
+            idText.setText(uid);
+        }
+
+        if(pwd != null){
+            pwdText.setText(pwd);
+        }
 
 //        String regisId =  getIntent().getExtras().getString("uid");
 //        if( regisId != null){
@@ -93,13 +106,19 @@ public class MainActivity extends AppCompatActivity {
         }catch (JSONException ex){
 
         }
-
+        final String uid = email;
+        final String pwd = yzm;
         params1.put("pj",obj.toString());
         Param.sendPost(this,url, params1, new JsonDataHandle() {
             @Override
             public void dealJSONData(JSONObject object) {
                 try{
                     loginSuccess();
+                    SharedPreferences prefer = getPreferences(Context.MODE_PRIVATE);
+                    SharedPreferences.Editor editor = prefer.edit();
+                    editor.putString("UID",uid);
+                    editor.putString("PWD",pwd);
+                    editor.commit();
                 }catch (Exception ex){
 
                 }
