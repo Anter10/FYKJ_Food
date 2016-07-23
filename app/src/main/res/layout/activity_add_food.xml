@@ -57,30 +57,35 @@
                     android:hint="输入价格如:10元"
                     android:id="@+id/add_food_price"
                     android:textColorHint="@color/appbar"
-                    android:layout_marginTop="5dp"
+                    android:layout_marginTop="40dp"
                     android:singleLine="true"
                     android:inputType="number"
                     android:maxLines="1"
                     android:textColor="@color/appbar"
                     android:layout_width="wrap_content" />
 
-                <EditText
-                    android:layout_width="@dimen/food_info_width"
-                    android:hint="请输入菜品简介:鸡蛋一个,米饭一碗"
-                    android:maxLines="3"
-                    android:layout_marginTop="5dp"
-                    android:textColorHint="@color/appbar"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="right|top" />
 
             </TableLayout>
 
-        </FrameLayout>
 
+        </FrameLayout>
+<FrameLayout
+    android:layout_width="match_parent"
+    android:paddingTop="145dp"
+    android:layout_height="wrap_content">
+    <EditText
+        android:layout_width="match_parent"
+        android:hint="请输入菜品简介:鸡蛋一个,米饭一碗"
+        android:maxLines="1"
+        android:layout_marginTop="5dp"
+        android:textColorHint="@color/appbar"
+        android:layout_height="wrap_content"
+        />
+</FrameLayout>
 
         <FrameLayout
             android:layout_width="match_parent"
-            android:layout_marginTop="220dp"
+            android:paddingTop="220dp"
             android:layout_height="wrap_content">
 
 

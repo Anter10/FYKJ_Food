@@ -11,7 +11,8 @@
 
     <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:id="@+id/frameLayout">
 
         <FrameLayout
             android:layout_width="match_parent"
@@ -31,15 +32,15 @@
                 android:layout_width="match_parent"
                 android:textColor="@color/appbar"
                 android:textColorHint="@color/appbar"
-                android:hint="请输入餐桌名称 (比如:1号餐桌)"
+                android:hint="请输入餐桌类型 (比如:2人桌)"
                 android:layout_marginTop="60dp"
-                android:id="@+id/table_name"
+                android:id="@+id/table_type"
                 android:layout_height="wrap_content" />
 
 
         </FrameLayout>
         <Button
-            android:id="@+id/first_ok_btn"
+            android:id="@+id/addtable_ok_btn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/add_word"

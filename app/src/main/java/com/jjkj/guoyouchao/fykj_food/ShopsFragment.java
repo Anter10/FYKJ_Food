@@ -11,6 +11,7 @@ import android.view.ViewGroup;
 import android.widget.ListView;
 
 import com.jjkj.guoyouchao.fykj_food.UserDataModel.TableSingModel;
+import com.jjkj.guoyouchao.fykj_food.UserDataModel.UserData;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -39,9 +40,9 @@ public class ShopsFragment extends Fragment {
     //
     public void initViews(){
 //        if(Sections == 1){
-            List<Map<String, TableSingModel>> list = getData();
+
             listView.addFooterView(new View(this.getContext()));
-            listView.setAdapter(new TableCell(rootView.getContext(), list));
+            listView.setAdapter(new TableCell(rootView.getContext(), UserData.getUserdata().getTSM()));
 //        }
     }
 
@@ -51,7 +52,7 @@ public class ShopsFragment extends Fragment {
         // Inflate the layout for this fragment
 
        rootView = inflater.inflate(R.layout.fragment_shops, container, false);
-
+        Log.d("dddd","vvvv");
 //        Log.d("ddsdsdsdsd = ",String.valueOf(getArguments().getInt(ARG_SECTION_NUMBER)));
 //            TextView textView = (TextView) rootView.findViewById(R.id.section_label);
 //            textView.setText(getString(R.string.section_format, getArguments().getInt(ARG_SECTION_NUMBER)));

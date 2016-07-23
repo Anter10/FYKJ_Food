@@ -1,6 +1,7 @@
 package com.jjkj.guoyouchao.fykj_food;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.Settings;
@@ -36,6 +37,7 @@ public class InOutFragmentn extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
+
 
         rootView = inflater.inflate(R.layout.fragment_in_out_fragmentn, container, false);
 

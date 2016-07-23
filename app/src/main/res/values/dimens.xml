@@ -38,8 +38,8 @@
 
     <dimen name="food_info_width">140dp</dimen>
 
-    <dimen name="add_food_pic_width">140dp</dimen>
-    <dimen name="add_food_pic_height">140dp</dimen>
+    <dimen name="add_food_pic_width">120dp</dimen>
+    <dimen name="add_food_pic_height">120dp</dimen>
 
 
     <dimen name="edit_food_pic_font">18dp</dimen>

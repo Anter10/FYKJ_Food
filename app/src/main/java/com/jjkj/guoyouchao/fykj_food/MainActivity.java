@@ -14,8 +14,11 @@ import android.widget.TextView;
 
 import com.jjkj.guoyouchao.fykj_food.TOOLS.HtppUrlPath;
 import com.jjkj.guoyouchao.fykj_food.TOOLS.Param;
+import com.jjkj.guoyouchao.fykj_food.UserDataModel.TableSingModel;
+import com.jjkj.guoyouchao.fykj_food.UserDataModel.UserData;
 import com.loopj.android.http.RequestParams;
 
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 import com.jjkj.guoyouchao.fykj_food.JsonDataHandle;
@@ -42,9 +45,9 @@ public class MainActivity extends AppCompatActivity {
         pwdText     =  (EditText)findViewById(R.id.ok_input_pwd);
         idText      =  (EditText)findViewById(R.id.ok_input_id);
 
-        SharedPreferences sharedPref = getPreferences(Context.MODE_PRIVATE);
-        String uid = getResources().getString(R.string.UID);
-        String pwd = getResources().getString(R.string.PWD);
+        SharedPreferences sharedPref = getSharedPreferences("um",Context.MODE_PRIVATE);
+        String uid = sharedPref.getString("uid","");
+        String pwd = sharedPref.getString("pwd","");
         if(uid != null){
             idText.setText(uid);
         }
@@ -113,21 +116,34 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void dealJSONData(JSONObject object) {
                 try{
-                    loginSuccess();
-                    SharedPreferences prefer = getPreferences(Context.MODE_PRIVATE);
+                    UserData.clearData();
+                    UserData.getUserdata().setUserid(uid);
+                    SharedPreferences prefer = getSharedPreferences("um",Context.MODE_PRIVATE);
                     SharedPreferences.Editor editor = prefer.edit();
-                    editor.putString("UID",uid);
-                    editor.putString("PWD",pwd);
+                    editor.putString("uid",uid);
+                    editor.putString("pwd",pwd);
                     editor.commit();
+
+                    JSONArray jsonArray = Param.getPSObject(object);
+                    Log.d("收到的数据 3= ",jsonArray.toString());
+                    for (int tbsindex = 0; tbsindex < jsonArray.length(); tbsindex ++){
+                        JSONObject singletable = jsonArray.getJSONObject(tbsindex);
+                        TableSingModel tbs     = new TableSingModel(singletable);
+                        UserData.getUserdata().addTableSingle(tbs);
+                    }
+
+                    loginSuccess();
                 }catch (Exception ex){
 
                 }
-                Log.d("收到的数据 = ",object.toString());
+
+                finish();
             }
         });
     }
 
     public void loginSuccess(){
+
         Intent mainIntent = new Intent(this.getApplicationContext(),APPMainActivity.class);
         startActivity(mainIntent);
         this.finish();

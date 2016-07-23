@@ -28,6 +28,7 @@ import java.net.URL;
 import java.util.UUID;
 import android.util.Log;
 
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -36,6 +37,8 @@ import cz.msebera.httpclient.android.BuildConfig;
 
 public class Param {
 
+    public static  final String ptbsname = "tbs";
+    public static  final String successkey = "successkey";
     private static final String TAG = "uploadFile";
     private static final int TIME_OUT = 5000; //超时时间
     private static final String CHARSET = "utf-8"; //设置编码
@@ -58,24 +61,30 @@ public class Param {
             @Override
             public void onSuccess(int statusCode, cz.msebera.android.httpclient.Header[] headers, JSONObject response) {
                 //处理数据接口
-                boolean success = true;
+                int showtype = 0;
+                String show     = "";
+
                 try {
-
-                    if (response.getString("error") != null) {
-                        success = false;
-                        Param.showError(activity, response.toString());
-                    }
-                } catch (JSONException ex) {
-
+                    show     = response.getString("show");
+                    showtype = response.getInt("st");
+                } catch (JSONException e) {
+                    e.printStackTrace();
                 }
-                Log.d("服务器发送的数据212121 = ","response");
-                if (success) {
+                Log.d("success showtype = ",String.valueOf(showtype)+show);
+                if(showtype == 0){
+
+                }else if (showtype == 1){
                     js.dealJSONData(response);
                 }
-//                client.cancelAllRequests(true);
-//                client.cancelRequests(activity.getApplicationContext(),true);
-                progressDialog.dismiss();
 
+                try {
+                    Param.showError(activity, show);
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+
+
+                progressDialog.dismiss();
             }
 
             @Override
@@ -89,15 +98,16 @@ public class Param {
     }
 
 
-    public static void showError(Activity activity, String objson) throws JSONException {
-        try {
-            JSONObject obj = new JSONObject(objson);
-            if (obj.getString("error") != null) {
-                Toast.makeText(activity.getApplicationContext(), obj.getString("error").toString(), Toast.LENGTH_SHORT).show();
-            }
-        } catch (JSONException ex) {
+    public static JSONArray getPSObject(JSONObject obj) throws JSONException {
+        JSONObject alldata = obj.getJSONObject(Param.successkey);
+        String  tbsdata = alldata.getString("tbs");
+        JSONObject obj1 = new JSONObject(tbsdata);
+        JSONArray jsonArray = obj1.getJSONArray("ps");
+        return jsonArray;
+    }
 
-        }
+    public static void showError(Activity activity, String objson) throws JSONException {
+        Toast.makeText(activity.getApplicationContext(), objson, Toast.LENGTH_SHORT).show();
     }
 
     public static void showMessage(Activity activity, String objson) throws JSONException {
